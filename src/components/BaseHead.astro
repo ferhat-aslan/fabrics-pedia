@@ -9,61 +9,7 @@ export interface Props {
 	ogImage?: string | undefined
 	articleDate?: string | undefined
 }
-const schema = JSON.stringify({
-	  "@context": "https://schema.org",
-	  "@type": "Article",
-	  "headline": "Best Sewing Machines 2023",
-	  "image": [
-		"https://ik.imagekit.io/vpre3wjag/white-automatic-sewing-machine.jpg?updatedAt=1694025678381",
-		"https://ik.imagekit.io/vpre3wjag/white-automatic-computer-sewing-and-embroidery-machine.jpg?updatedAt=1694025678058"
-	  ],
-	  "datePublished": "2023-09-05T08:00:00+08:00",
-	  "dateModified": "2023-09-05T09:20:00+08:00",
-	  "author": [
-		{
-		  "@type": "Person",
-		  "name": "Sewing Master",
-		  "url": "https://www.fabricspedia.com/"
-		}
-	  ],
-	  "thumbnailUrl": "https://ik.imagekit.io/vpre3wjag/white-automatic-sewing-machine.jpg?updatedAt=1694025678381",
-	  "keywords": [
-		"sewing",
-		"brother",
-		"janome",
-		"pfaff",
-		"nail",
-		"bernette",
-		"fabric",
-		"cotton",
-		"textiles",
-		"knitting",
-		"Embroidery",
-		"tailor"
-	  ],
-	  "articleSection": [
-		"***Best Sewing Machines***",
-		"Sewing Techniques",
-		"Sewing tips",
-		"Patterns",
-		"Fashion trends",
-		"Handmade clothing",
-		"Most Popular",
-		"Embroidery",
-		"Dressmaking",
-		"Tailor",
-		"Couture sewing",
-		"Alterations",
-		"Fashion designs",
-		"Fabric selection",
-		"Garment construction",
-		"Tailoring",
-		"Embroidery",
-		"knitting machines",
-		"Fashion trends"
-	  ],
-	  "inLanguage": "en-US"
-	})
+
 const { title, description = siteConfig.description, ogImage, articleDate } = Astro.props
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const socialImageURL = new URL(ogImage ? ogImage : '/open-graph.png', Astro.url).href
@@ -86,14 +32,13 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 <link rel='canonical' href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{siteTitle}</title>
+<!-- -->
 
-<!-- SEO -->
+
 <meta name='title' content={siteTitle} />
 <meta name='description' content={description} />
 <meta name='author' content={siteConfig.author} />
 
-<!-- Open Graph / Facebook -->
 <meta property='og:type' content={articleDate ? 'article' : 'website'} />
 <meta property='og:url' content={Astro.url} />
 <meta property='og:title' content={title} />
@@ -114,8 +59,7 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
 <meta property='twitter:image' content={socialImageURL} />
-<script type="application/ld+json" set:html={schema}>
-</script>
+
 <!-- RSS auto-discovery -->
 <link rel='alternate' type='application/rss+xml' title={siteConfig.title} href='/rss.xml' />
-
+<title>{siteTitle}</title> 

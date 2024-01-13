@@ -28,13 +28,22 @@ const { title, description, image, articleDate } = Astro.props
 		<ProviderTheme />
 		<ProviderAnimations />
 		<script type="application/ld+json" set:html={`
-			{ 
-			  "@context": "http://schema.org",
-			  "@type": "WebPage",
-			  "name": ${"title"},
-			  "image": ${"image"},
-			  "url": ${"url"}
-			}
+			 {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "${title}",
+      "image": [
+        "${image}"
+       ],
+	   "articleBody":"${description ?? (title + " | Fabrics Pedia") }"
+      "datePublished": "${articleDate}",
+      "dateModified": "${articleDate}",
+      "author": [{
+          "@type": "Person",
+          "name": "Ferhat Aslan",
+          "url": "https://feslan.github.io"
+        }]
+    }
 		  `}/>
 	</head>
 
