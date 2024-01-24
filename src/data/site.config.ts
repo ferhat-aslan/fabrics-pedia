@@ -11,7 +11,7 @@ interface SiteConfig {
 export const siteConfig: SiteConfig = {
 	author: 'Ferhat Aslan', // Site author
 	title: 'Fabrics Pedia | All about fabrics', // Site title.
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', // Description to display in the meta tags
+	description: 'Discover the art of sewing, fashion, and stitching techniques on our website. Dive into a world of fabrics, patterns, and expert tips. Unleash your creativity!', // Description to display in the meta tags
 	lang: 'en-GB',
 	ogLocale: 'en_GB',
 	shareMessage: 'Share this post', // Message to share a post on social media
