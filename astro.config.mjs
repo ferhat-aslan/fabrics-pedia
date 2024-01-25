@@ -6,7 +6,7 @@ import { remarkReadingTime } from './src/utils/readTime.ts'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://www.fabricspedia.com/', 
+	site: 'https://fabricspedia.com/', 
 	image: {
 		service: passthroughImageService(),
 	  },// Write here your website url
