@@ -8,6 +8,7 @@ export const CATEGORIES = [
 	"Home Textile",
 	"Manufacturers",
 	"Sewing Patterns",
-	"Softwares and Tools"
+	"Softwares and Tools",
+	"Others"
 
 ] as const
