@@ -1,33 +1,40 @@
 ---
-import BaseHead from '@/components/BaseHead'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import ProviderTheme from '@/components/ProviderTheme'
-import ProviderAnimations from '@/components/ProviderAnimations'
-import TwSizeIndicator from '@/components/TwSizeIndicator'
-import EditBlog from '@/components/editBlog'
-const { title, description, image, articleDate } = Astro.props
+import BaseHead from "@/components/BaseHead";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ProviderTheme from "@/components/ProviderTheme";
+import ProviderAnimations from "@/components/ProviderAnimations";
+import TwSizeIndicator from "@/components/TwSizeIndicator";
+import EditBlog from "@/components/editBlog";
+const { title, description, image, articleDate } = Astro.props;
 ---
 
-<html lang='en' class='scroll-smooth'>
-	<head>
-		 <!-- Google Tag Manager -->
- <script is:inline >
-	(function (w, d, s, l, i) {
-	  w[l] = w[l] || [];
-	  w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-	  var f = d.getElementsByTagName(s)[0],
-		j = d.createElement(s),
-		dl = l != "dataLayer" ? "&l=" + l : "";
-	  j.async = true;
-	  j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-	  f.parentNode.insertBefore(j, f);
-	})(window, document, "script", "dataLayer", "GTM-T33WM8D");
-  </script>
-		<BaseHead title={title} description={description} ogImage={image} articleDate={articleDate} />
-		<ProviderTheme />
-		<ProviderAnimations />
-		<script type="application/ld+json" set:html={`
+<html lang="en" class="scroll-smooth">
+  <head>
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-T33WM8D");
+    </script>
+    <BaseHead
+      title={title}
+      description={description}
+      ogImage={image}
+      articleDate={articleDate}
+    />
+    <ProviderTheme />
+    <ProviderAnimations />
+    <script
+      type="application/ld+json"
+      set:html={`
 			 {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -35,7 +42,7 @@ const { title, description, image, articleDate } = Astro.props
       "image": [
         "${image}"
        ],
-	   "articleBody":"${description ?? (title + " | Fabrics Pedia") }",
+	   "articleBody":"${description ?? title + " | Fabrics Pedia"}",
       "datePublished": "${articleDate}",
       "dateModified": "${articleDate}",
       "author": [{
@@ -44,23 +51,25 @@ const { title, description, image, articleDate } = Astro.props
           "url": "https://feslan.github.io"
         }]
     }
-		  `}/>
-	</head>
+		  `}
+    />
+    <meta name="p:domain_verify" content="49adb4b50fd6f8dd52a49ef3b6ae154d" />
+  </head>
 
-	<body class='bg-white text-stone-950 dark:bg-[#0a0910] dark:text-white'>
-		<main
-			class='px-5 sm:mx-auto sm:max-w-2xl sm:px-8 lg:px-0 antialiased md:max-w-6xl grid gap-12 mt-4 overflow-hidden md:overflow-visible'
-		>
-			<Header />
-			<slot />
-			<Footer />
-		</main>
-		<TwSizeIndicator />
-		<EditBlog />
-		<style>
-			body {
-				margin-left: calc(100vw - 100%); /* prevent layout shift */
-			}
-		</style>
-	</body>
+  <body class="bg-white text-stone-950 dark:bg-[#0a0910] dark:text-white">
+    <main
+      class="px-5 sm:mx-auto sm:max-w-2xl sm:px-8 lg:px-0 antialiased md:max-w-6xl grid gap-12 mt-4 overflow-hidden md:overflow-visible"
+    >
+      <Header />
+      <slot />
+      <Footer />
+    </main>
+    <TwSizeIndicator />
+    <EditBlog />
+    <style>
+      body {
+        margin-left: calc(100vw - 100%); /* prevent layout shift */
+      }
+    </style>
+  </body>
 </html>
