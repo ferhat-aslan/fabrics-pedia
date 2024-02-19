@@ -9,6 +9,7 @@ export const CATEGORIES = [
 	"Manufacturers",
 	"Sewing Patterns",
 	"Softwares and Tools",
-	"Others"
+	"Others",
+	"How To"
 
 ] as const
