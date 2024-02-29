@@ -40,7 +40,7 @@ const { title, description, image, articleDate } = Astro.props;
       "@type": "Article",
       "headline": "${title}",
       "image": [
-        "${Astro.site + image}"
+        "${Astro.site + (image ?? "favicon.svg")}"
        ],
 	   "articleBody":"${description ?? title + " | Fabrics Pedia"}",
       "datePublished": "${articleDate}",
