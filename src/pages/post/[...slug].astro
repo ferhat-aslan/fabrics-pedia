@@ -9,7 +9,7 @@ import { getPosts } from "@/utils";
 import SButton from "@/components/mdx/SButton";
 import Disqus from "@/components/Disqus";
 import { disqusConfig } from "@/data/disqus.config";
-import YouTube from "@/components/YouTube";
+import YouTube from "../../components/Youtube.astro";
 
 const posts = await getCollection("blog");
 export async function getStaticPaths() {
