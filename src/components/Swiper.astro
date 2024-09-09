@@ -1,0 +1,233 @@
+---
+import { Image } from "astro:assets";
+import FormattedDate from "./FormattedDate.astro";
+
+const { posts } = Astro.props;
+const [first, second, third, ...other] = posts;
+console.log(first);
+---
+
+<div class="swiper main">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <Image
+        src={first.data.heroImage}
+        format="webp"
+        alt={`img of ${first.data.title}`}
+      />
+      <div
+        class="text-white absolute bottom-5 w-full flex flex-col justify-center items-center"
+      >
+        <h2
+          class="mb-1 md:text-3xl text-base font-bold md:font-normal text-white"
+        >
+          <a
+            href={`/post/${first.slug}/`}
+            class="text-white hover:text-blue-100 hover:border hover:border-dashed"
+          >
+            {first.data.title}
+          </a>
+        </h2>
+        <ul class="flex flex-row gap-x-2 text-sm mb-4 text-gray-300">
+          <li class="hidden md:flex justify-center items-center meta-link">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              class="mr-2"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              ></path></svg
+            >
+            <a href="/author">Fabrics Pedia</a>
+          </li>
+          <li class="meta-link">
+            Date : <span><FormattedDate date={first.data.pubDate} /></span>
+          </li>
+          <li class="meta-link hidden md:flex">
+            Categories :
+            <a href="/categories/four-seasone" class="ms-1">
+              {first.data.category}</a
+            >
+          </li>
+          <li class="meta-link hidden md:flex">
+            Tags :
+            <a href="/tags/seasone" class="ms-1"> {first.data.tags[0]} ...</a><a
+              href={"/tags/" + first.data.tags[0]}
+              class="ms-1"
+            >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <Image
+        src={second.data.heroImage}
+        format="webp"
+        alt={`img of ${second.data.title}`}
+      />
+      <div
+        class="text-white absolute bottom-5 w-full flex flex-col justify-center items-center"
+      >
+        <h2
+          class="mb-1 md:text-3xl text-base font-bold md:font-normal text-white"
+        >
+          <a
+            href={`/post/${second.slug}/`}
+            class="text-white hover:text-blue-100 hover:border hover:border-dashed"
+          >
+            {second.data.title}
+          </a>
+        </h2>
+        <ul class="flex flex-row gap-x-2 text-sm mb-4 text-gray-300">
+          <li class="hidden md:flex justify-center items-center meta-link">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              class="mr-2"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              ></path></svg
+            >
+            <a href="/author">Fabrics Pedia</a>
+          </li>
+          <li class="meta-link">
+            Date : <span><FormattedDate date={second.data.pubDate} /></span>
+          </li>
+          <li class="meta-link hidden md:flex">
+            Categories :
+            <a href="/categories/four-seasone" class="ms-1">
+              {second.data.category}</a
+            >
+          </li>
+          <li class="meta-link hidden md:flex">
+            Tags :
+            <a href="/tags/seasone" class="ms-1">
+              {second.data.tags[0]} ...</a
+            ><a href={"/tags/" + second.data.tags[0]} class="ms-1"> </a>
+          </li>
+        </ul>
+      </div>
+    </div><div class="swiper-slide">
+      <Image
+        src={third.data.heroImage}
+        format="webp"
+        alt={`img of ${third.data.title}`}
+      />
+      <div
+        class="text-white absolute bottom-5 w-full flex flex-col justify-center items-center"
+      >
+        <h2
+          class="mb-1 md:text-3xl text-base font-bold md:font-normal text-white"
+        >
+          <a
+            href={`/post/${third.slug}/`}
+            class="text-white hover:text-blue-100 hover:border hover:border-dashed"
+          >
+            {third.data.title}
+          </a>
+        </h2>
+        <ul class="flex flex-row gap-x-2 text-sm mb-4 text-gray-300">
+          <li class="hidden md:flex justify-center items-center meta-link">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              class="mr-2"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              ></path></svg
+            >
+            <a href="/author">Fabrics Pedia</a>
+          </li>
+          <li class="meta-link">
+            Date : <span><FormattedDate date={third.data.pubDate} /></span>
+          </li>
+          <li class="meta-link hidden md:flex">
+            Categories :
+            <a href="/categories/four-seasone" class="ms-1">
+              {third.data.category}</a
+            >
+          </li>
+          <li class="meta-link hidden md:flex">
+            Tags :
+            <a href="/tags/seasone" class="ms-1"> {third.data.tags[0]} ...</a><a
+              href={"/tags/" + third.data.tags[0]}
+              class="ms-1"
+            >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div>
+<style is:global>
+  .swiper.main {
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+  }
+  .swiper.thumbs {
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .swiper-wrapper {
+    border-radius: 20px !important;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 75vh;
+  }
+  Image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .swiper-pagination-bullet-active {
+    background: white !important;
+  }
+  ..swiper-pagination-bullet {
+    background: white !important;
+    opacity: 0.8 !important;
+  }
+  .swiper img {
+    filter: brightness(0.6);
+  }
+  ul li a {
+    border-bottom: 1px dashed white;
+  }
+</style>
+<script src="../utils/swiper.js"></script>

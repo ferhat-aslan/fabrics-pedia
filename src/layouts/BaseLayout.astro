@@ -6,6 +6,13 @@ import ProviderTheme from "@/components/ProviderTheme";
 import ProviderAnimations from "@/components/ProviderAnimations";
 import TwSizeIndicator from "@/components/TwSizeIndicator";
 import EditBlog from "@/components/editBlog";
+import TwitterIcon from "@/components/icons/TwitterIcon";
+import TwitterAccount from "@/components/icons/TwitterAccount";
+import YoutubeAccount from "@/components/icons/YoutubeAccount";
+import PinterestAccount from "@/components/icons/PinterestAccount";
+import LinkedinIcon from "@/components/icons/linkedinIcon";
+import LinkedinAccount from "@/components/icons/LinkedinAccount";
+import InstagramAccount from "@/components/icons/InstagramAccount";
 const { title, description, image, articleDate } = Astro.props;
 ---
 
@@ -70,8 +77,15 @@ const { title, description, image, articleDate } = Astro.props;
 
   <body class="bg-white text-stone-950 dark:bg-[#0a0910] dark:text-white">
     <main
-      class="px-5 sm:mx-auto sm:max-w-2xl sm:px-8 lg:px-0 antialiased md:max-w-6xl grid gap-12 mt-4 overflow-hidden md:overflow-visible"
+      class="px-5 sm:mx-auto sm:max-w-2xl sm:px-8 lg:px-0 antialiased md:max-w-6xl grid xgap-12 mt-4 overflow-hidden md:overflow-visible"
     >
+      <div class="w-full flex flex-row justify-start items-center gap-x-3">
+        <span><TwitterAccount /></span>
+        <span><YoutubeAccount /></span>
+        <span><PinterestAccount /></span>
+        <span><LinkedinAccount /></span>
+        <span><InstagramAccount /></span>
+      </div>
       <Header />
       <slot />
       <Footer />
